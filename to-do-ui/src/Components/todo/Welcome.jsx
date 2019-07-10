@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import HelloWorldService from '../api/todo/HelloWorldService.js'
 
 class Welcome extends Component {
 
     constructor(props) {
         super(props);
-
-        this.retrieveWelcomeMessage = this.retrieveWelcomeMessage.bind(this)
 
         this.state = {
             welcomeMessage: '',

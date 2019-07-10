@@ -10,6 +10,7 @@ import CreateTodo from './CreateTodo.jsx'
 import Lists from './Lists.jsx'
 import ListTodos from './ListTodos.jsx';
 import CreateList from './CreateList.jsx';
+import AuthenticatedRoute from './AuthenticatedRoute'
 
 class TodoApp extends Component {
     render() {
@@ -21,12 +22,12 @@ class TodoApp extends Component {
                         <Switch>
                             <Route path="/" exact component={Login} />
                             <Route path="/login" component={Login} />
-                            <Route path="/welcome/:name" component={Welcome} />
-                            <Route path="/lists/:listsId/todos/:id" component={CreateTodo} />
-                            <Route path="/lists/:listsId/todos" component={ListTodos} />
-                            <Route path="/lists/:listsId" component={CreateList} />
-                            <Route path="/lists" component={Lists} />
-                            <Route path="/logout" component={Logout} />
+                            <AuthenticatedRoute path="/welcome/:name" component={Welcome} />
+                            <AuthenticatedRoute path="/lists/:listsId/todos/:id" component={CreateTodo} />
+                            <AuthenticatedRoute path="/lists/:listsId/todos" component={ListTodos} />
+                            <AuthenticatedRoute path="/lists/:listsId" component={CreateList} />
+                            <AuthenticatedRoute path="/lists" component={Lists} />
+                            <AuthenticatedRoute path="/logout" component={Logout} />
                             <Route component={ErrorPage} />
                         </Switch>
                         <Footer />
